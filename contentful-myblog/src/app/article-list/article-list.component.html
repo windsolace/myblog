@@ -1,0 +1,9 @@
+<p>
+  article-list works!
+</p>
+<ul class="u-listReset">
+  <li *ngFor="let article of articles">
+    {{ article.fields.date }}
+    {{ article.fields.post.content[0].content[0].value }}
+  </li>
+</ul>
