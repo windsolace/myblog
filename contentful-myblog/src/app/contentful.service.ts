@@ -21,9 +21,9 @@ export class ContentfulService {
 
 	constructor() { }
 
-	getProducts(query?: object): Promise<Entry<any>[]> {
+	getArticles(query?: object): Promise<Entry<any>[]> {
 		return this.cdaClient.getEntries(Object.assign({
-			content_type: CONFIG.contentTypeIds.product
+			//content_type: CONFIG.contentTypeIds.blogPost
 		}, query))
 			.then(res => res.items);
 	}
