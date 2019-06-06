@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes }   from '@angular/router';
 
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { ContentfulService } from './contentful.service';
 import { ArticleListComponent } from './article-list/article-list.component';
@@ -20,7 +22,8 @@ const routes: Routes = [
 		ArticleComponent
 	],
 	imports: [
-		BrowserModule
+		BrowserModule,
+		NgbCarouselModule
 	],
 	providers: [
 		ContentfulService
