@@ -1,11 +1,9 @@
 <p>
 	article-list works!
 </p>
-<ul class="u-listReset">
-	<li *ngFor="let article of articles">
-		<app-article
-			[title]="article.fields.postTitle"
-			[content]="article.fields.post.content[0].content[0].value"
-			[date]="article.fields.date"></app-article>
-	</li>
-</ul>
+<div class="article-container" *ngFor="let article of articles">
+	<app-article
+		[title]="article.fields.postTitle"
+		[content]="article.fields.post.content[0].content[0].value"
+		[date]="article.fields.date"></app-article>
+</div>
