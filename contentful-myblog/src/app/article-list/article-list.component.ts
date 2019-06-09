@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentfulService } from '../contentful.service';
-import { Entry } from 'contentful';
+import { ArticleService } from '../services/article.service';
+import { Article } from '../models/article';
 
 @Component({
 	selector: 'app-article-list',
@@ -8,13 +8,14 @@ import { Entry } from 'contentful';
 	styleUrls: ['./article-list.component.less']
 })
 export class ArticleListComponent implements OnInit {
-	private articles: Entry<any>[] = [];
+	private articles: Article[] = [];
 
-	constructor(private contentfulService: ContentfulService) { }
+	constructor(private articleSvc: ArticleService) { }
 
 	ngOnInit() {
-		this.contentfulService.getArticles()
-		.then(articles => this.articles = articles)
+		this.articleSvc.getArticles().subscribe(articles => {
+			this.articles = articles;
+		});
 	}
 
 }

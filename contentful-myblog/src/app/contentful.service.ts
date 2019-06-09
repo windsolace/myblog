@@ -28,4 +28,9 @@ export class ContentfulService {
 			.then(res => res.items);
 	}
 
+	getArticle(id:string, query?:object): Promise<Entry<any>> {
+		return this.cdaClient.getEntry(id,query)
+			.then(res => res);
+	}
+
 }

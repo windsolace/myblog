@@ -1,4 +1,15 @@
-<a (click)="backToParent()">Back</a>
-<p>
-  this is {{ articleId }}
-</p>
+<div class="article-page-container" *ngIf="article">
+	<div class="article-page-container__back" (click)="backToParent()">
+		<i class="material-icons">arrow_back</i>
+		<a>Back</a>
+	</div>
+		
+
+	<div class="article-page-container__body" *ngIf="article">
+		<app-article
+			[title]="article.title"
+			[content]="article.content"
+			[date]="article.date"></app-article>
+	</div>
+
+</div>

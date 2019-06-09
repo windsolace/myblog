@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes }   from '@angular/router';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { AppComponent } from './app.component';
 import { ContentfulService } from './contentful.service';
 import { ArticleListComponent } from './article-list/article-list.component';
@@ -38,8 +36,7 @@ const routes: Routes = [
 		RouterModule.forRoot(
 			routes,
 			{ enableTracing: true }
-		),
-		NgbModule
+		)
 	],
 	providers: [
 		ContentfulService

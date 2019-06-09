@@ -6,33 +6,36 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./article.component.less']
 })
 export class ArticleComponent implements OnInit {
-	private postTitleVal = '';
-	private contentBody = '';
-	private dateVal = '';
+	private _postTitle = '';
+	private _description = '';
+	private _content = '';
+	private _date = '';
 
 	constructor() { }
 
 	@Input()
 	set title(title: string) {
-		this.postTitleVal = title.trim();
+		this._postTitle = title.trim();
 	}
-	
-	get title(): string { return this.postTitleVal }
+	get title(): string { return this._postTitle }
 
+	@Input()
+	set description(description: string) {
+		this._description = description.trim();
+	}
+	get description(): string { return this._description }
 
 	@Input()
 	set content(content: string) {
-		this.contentBody = content.trim();
+		this._content = content.trim();
 	}
-
-	get content(): string { return this.contentBody }
+	get content(): string { return this._content }
 
 	@Input()
 	set date(date : string) {
-		this.dateVal = date;
+		this._date = date;
 	}
-
-	get date(): string { return this.dateVal }
+	get date(): string { return this._date }
 
 	ngOnInit() {
 

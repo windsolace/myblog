@@ -1,11 +1,13 @@
-<div class="article article--card">
-	<div class="article--card__image-container">
-		<img class="article--card__image" src = "https://via.placeholder.com/500">
+<div class="article">
+	<div class="article__image-container">
+		<img class="article__image" src = "https://via.placeholder.com/500">
 	</div>
-	<div class="article--card__body">
-		<h2 class="article--card__title">{{ title }}</h2>
-		<!-- <p>Date: {{ date }}</p> -->
-		<p class="article--card__content">
+	<div class="article__body">
+		<h2 class="article__title">{{ title }}</h2>
+		<p *ngIf="description" class="article__description">
+			{{ description }}
+		</p>
+		<p *ngIf="content" class="article__content">
 			{{ content }}
 		</p>
 	</div>

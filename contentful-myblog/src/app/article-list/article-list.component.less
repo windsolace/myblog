@@ -1,11 +1,11 @@
 @import '../../styles.less';
 
 .article-container {
-    display:flex;
     padding: @page-padding-desktop;
-    flex-direction:row;
-    flex-wrap:wrap;
-
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    .flex();
+    
     &__column {
         width:33.333%;
     }
