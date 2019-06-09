@@ -2,8 +2,41 @@
 	article-list works!
 </p>
 <div class="article-container" *ngFor="let article of articles">
-	<app-article
-		[title]="article.fields.postTitle"
-		[content]="article.fields.post.content[0].content[0].value"
-		[date]="article.fields.date"></app-article>
+	<div class="article-container__column">
+		<app-article
+			[title]="article.fields.postTitle"
+			[content]="article.fields.post.content[0].content[0].value"
+			[date]="article.fields.date"
+			[routerLink]="['/articles', article.sys.id]"></app-article>
+	</div>
+	<div class="article-container__column">
+		<app-article
+			[title]="article.fields.postTitle"
+			[content]="article.fields.post.content[0].content[0].value"
+			[date]="article.fields.date"></app-article>
+	</div>
+	<div class="article-container__column">
+		<app-article
+			[title]="article.fields.postTitle"
+			[content]="article.fields.post.content[0].content[0].value"
+			[date]="article.fields.date"></app-article>
+	</div>
+	<div class="article-container__column">
+		<app-article
+			[title]="article.fields.postTitle"
+			[content]="article.fields.post.content[0].content[0].value"
+			[date]="article.fields.date"></app-article>
+	</div>
+		<div class="article-container__column">
+		<app-article
+			[title]="article.fields.postTitle"
+			[content]="article.fields.post.content[0].content[0].value"
+			[date]="article.fields.date"></app-article>
+	</div>
+	<div class="article-container__column">
+		<app-article
+			[title]="article.fields.postTitle"
+			[content]="article.fields.post.content[0].content[0].value"
+			[date]="article.fields.date"></app-article>
+	</div>
 </div>

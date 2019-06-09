@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
 	selector: 'app-article',
 	templateUrl: './article.component.html',
-	styleUrls: ['./article.component.css']
+	styleUrls: ['./article.component.less']
 })
 export class ArticleComponent implements OnInit {
 	private postTitleVal = '';

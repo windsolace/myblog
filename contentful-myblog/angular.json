@@ -21,8 +21,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.less"
             ],
             "scripts": []
           },
@@ -125,7 +124,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "css"
+      "styleext": "less"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
