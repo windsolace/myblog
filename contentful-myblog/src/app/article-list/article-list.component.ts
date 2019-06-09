@@ -8,7 +8,7 @@ import { Article } from '../models/article';
 	styleUrls: ['./article-list.component.less']
 })
 export class ArticleListComponent implements OnInit {
-	private articles: Article[] = [];
+	articles: Article[] = [];
 
 	constructor(private articleSvc: ArticleService) { }
 
