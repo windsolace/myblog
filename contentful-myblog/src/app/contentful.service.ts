@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { createClient, Entry } from 'contentful';
+import { environment } from 'src/environments/environment.prod';
 
 
 const CONFIG = {
-	space: 'okqxdfd4dpqg',
-	accessToken: 'hVw1A09xLtDMlgZBVmBy8ygO9o602GLRZ5xdctbhFM8',
+	space: environment.contentful.space,
+	accessToken: environment.contentful.accessToken,
 
 	contentTypeIds: {
 		blogPost: '2PqfXUJwE8qSYKuM0U6w8M'

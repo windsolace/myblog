@@ -3,8 +3,6 @@ import { Article } from '../models/article';
 import { ContentfulService } from '../contentful.service';
 import { Entry } from 'contentful';
 import { Observable, of } from 'rxjs';
-import { ObserveOnOperator } from 'rxjs/internal/operators/observeOn';
-
 
 @Injectable({
 	providedIn: 'root'

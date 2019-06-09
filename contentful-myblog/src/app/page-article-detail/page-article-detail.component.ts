@@ -10,8 +10,8 @@ import { Article } from '../models/article';
 	styleUrls: ['./page-article-detail.component.less']
 })
 export class PageArticleDetailComponent implements OnInit {
-	private article: Article;
-	private articleId: string = "";
+	article: Article;
+	articleId: string = "";
 
 	constructor(
 		private route: ActivatedRoute,
