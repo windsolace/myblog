@@ -1,6 +1,7 @@
 <div class="article">
 	<div class="article__image-container">
-		<img class="article__image" src = "https://via.placeholder.com/500">
+		<!-- <img class="article__image" [src]="image"> -->
+		<img class="lazy article__image" src="https://via.placeholder.com/50" [attr.data-src]="image" alt="">
 	</div>
 	<div class="article__body">
 		<h2 class="article__title">{{ title }}</h2>

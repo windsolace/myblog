@@ -1,7 +1,7 @@
-<p>
-	article-list works!
-</p>
-<div class="article-container" *ngFor="let article of articles">
+<loader *ngIf="loading"></loader>
+<button (click)="toggle()">TOGGLE</button>
+<div class="article-container" *ngFor="let article of articles" style="opacity:0;"
+	[@loadTrigger]="loading ? 'loading' : 'loaded'">
 	<div class="article-container__column">
 		<app-article
 			[title]="article.title"

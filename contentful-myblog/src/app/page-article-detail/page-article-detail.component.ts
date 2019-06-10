@@ -12,6 +12,7 @@ import { Article } from '../models/article';
 export class PageArticleDetailComponent implements OnInit {
 	article: Article;
 	articleId: string = "";
+	loading: boolean = true;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class PageArticleDetailComponent implements OnInit {
 		this.articleId = this.route.snapshot.paramMap.get('id');
 		this.articleSvc.getArticle(this.articleId).subscribe(article => {
 			this.article = article;
+			this.loading = false;
 		});
 		
 	}

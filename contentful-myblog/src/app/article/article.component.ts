@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import lazyLoadInit  from '../lazyload';
 
 @Component({
 	selector: 'app-article',
@@ -10,6 +11,7 @@ export class ArticleComponent implements OnInit {
 	private _description = '';
 	private _content = '';
 	private _date = '';
+	private _image ='https://via.placeholder.com/3980';
 
 	constructor() { }
 
@@ -37,8 +39,14 @@ export class ArticleComponent implements OnInit {
 	}
 	get date(): string { return this._date }
 
-	ngOnInit() {
+	@Input()
+	set image(image : string) {
+		this._image = image;
+	}
+	get image(): string { return this._image }
 
+	ngOnInit() {
+		lazyLoadInit();
 	}
 
 }

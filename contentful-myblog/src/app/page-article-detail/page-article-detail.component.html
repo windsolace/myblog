@@ -1,4 +1,5 @@
 <div class="article-page-container" *ngIf="article">
+	<loader *ngIf="loading"></loader>
 	<div class="article-page-container__back" (click)="backToParent()">
 		<i class="material-icons">arrow_back</i>
 		<a>Back</a>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes }   from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ContentfulService } from './contentful.service';
@@ -11,6 +12,7 @@ import { PageAboutComponent } from './page-about/page-about.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PageArchivesComponent } from './page-archives/page-archives.component';
 import { PageArticleDetailComponent } from './page-article-detail/page-article-detail.component';
+import { LoaderComponent } from './loader/loader.component';
 
 // define the available routes
 const routes: Routes = [
@@ -29,17 +31,20 @@ const routes: Routes = [
 		PageAboutComponent,
 		NavigationComponent,
 		PageArchivesComponent,
-		PageArticleDetailComponent
+		PageArticleDetailComponent,
+		LoaderComponent
 	],
 	imports: [
 		BrowserModule,
+		BrowserAnimationsModule,
 		RouterModule.forRoot(
 			routes,
 			{ enableTracing: true }
 		)
 	],
 	providers: [
-		ContentfulService
+		ContentfulService,
+		LoaderComponent
 	],
 	bootstrap: [AppComponent]
 })
