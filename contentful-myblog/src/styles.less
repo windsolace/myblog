@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/styles/flex.less';
+@import 'assets/styles/colors.less';
 
 html {
     font-size:16px;
     font-family: 'Alegreya Sans', sans-serif;
+    color:@color-text;
+
+    body {
+        margin: 0;
+    }
 
     @media (min-width:@min-largedesktop) {
         // font-size: 1.1rem;

@@ -1,6 +1,16 @@
-<nav>
-  <a routerLink="/" routerLinkActive="active">Home</a>
-  <a routerLink="/articles" routerLinkActive="active">Archives</a>
-  <a routerLink="/about" routerLinkActive="active">About</a>
+<div class="navigation__fixed {{fixedNaviActive ? 'active': ''}}" >
+</div>
+<nav class="navigation" [style.top.vh]="topPos">
+	<div class="navigation__wrapper">
+		<a class="navigation__item" (click)="navigate('/');">
+			<span>Home</span>
+		</a>
+		<a class="navigation__item" (click)="navigate('/articles');">
+			<span >Archives</span>
+		</a>
+		<a class="navigation__item" (click)="navigate('/about');">
+			<span>About</span>
+		</a>
+	</div>
 </nav>
 <router-outlet></router-outlet>

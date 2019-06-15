@@ -1,0 +1,53 @@
+@import '../../styles.less';
+
+.navigation {
+    position:fixed;
+    width:100%;
+    transition: top 1s cubic-bezier(0,.60,0,1);
+
+    &__fixed {
+        height:50px;
+        width:100%;
+        position:fixed;
+        background-color:@color-white;
+        opacity:0;
+
+        &.active {
+            box-shadow: 2px 2px 5px;
+            opacity:1;
+        }
+    }
+
+    &__wrapper {
+        justify-content:center;
+        .flex-direction(row);
+        .flex-wrap(wrap);
+        .flex();
+    }
+
+    &__item {
+        padding:0 15px;
+        width:100px;
+        height:50px;
+        line-height:50px;
+        font-size:1.5rem;
+        text-align:center;
+        color:@color-black;
+
+        &:hover {
+            cursor:pointer;
+            text-decoration:underline;
+        }
+    }
+}
+
+//mobile
+@media screen and(max-width:@max-mobile) {
+    .navigation {
+
+        &__item {
+            width:auto;
+
+        }
+    }
+}

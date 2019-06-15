@@ -13,6 +13,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { PageArchivesComponent } from './page-archives/page-archives.component';
 import { PageArticleDetailComponent } from './page-article-detail/page-article-detail.component';
 import { LoaderComponent } from './loader/loader.component';
+import { HerobannerComponent } from './herobanner/herobanner.component';
 
 // define the available routes
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
 		NavigationComponent,
 		PageArchivesComponent,
 		PageArticleDetailComponent,
-		LoaderComponent
+		LoaderComponent,
+		HerobannerComponent
 	],
 	imports: [
 		BrowserModule,
