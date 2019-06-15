@@ -1,0 +1,45 @@
+.page-wrapper {
+    padding: @page-padding-desktop;
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    .flex();
+
+    .section {
+        width:100%;
+        text-align:center;
+        &__title {
+            font-size: 3.5rem;
+            margin:@page-padding-desktop;
+            animation-name: fadeInOut;
+            animation-duration: 3s;
+        }
+        &__subtitle {
+            font-size: 2rem;
+            margin:@page-padding-desktop;
+            animation-name: fadeInOut;
+            animation-duration: 3s;
+        }
+
+        &__content {
+            .flex-direction(row);
+            .flex-wrap(wrap);
+            .flex-justify(center);
+            .flex();
+            animation-name: fadeInOut;
+            animation-duration: 3s;
+        }
+    }
+}
+
+//large desktop
+@media screen and (min-width:@min-largedesktop) {
+    .page-wrapper {
+        padding: @page-padding-largedesktop;
+    }
+}
+//mobile
+@media screen and(max-width:@max-mobile) {
+    .page-wrapper {
+        padding: @page-padding-mobile;
+    }
+}

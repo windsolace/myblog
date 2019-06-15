@@ -1,10 +1,6 @@
 @import '../../styles.less';
 
 .article-container {
-    padding: @page-padding-desktop;
-    .flex-direction(row);
-    .flex-wrap(wrap);
-    .flex();
     
     &__column {
         width:33.333%;
@@ -14,7 +10,6 @@
 //large desktop
 @media screen and (min-width:@min-largedesktop) {
     .article-container {
-        padding: @page-padding-largedesktop;
 
         &__column {
             width:25%;
@@ -24,7 +19,6 @@
 //mobile
 @media screen and(max-width:@max-mobile) {
     .article-container {
-        padding: @page-padding-mobile;
 
         &__column {
             width:100%;

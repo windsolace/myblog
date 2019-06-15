@@ -1,6 +1,6 @@
 <loader *ngIf="loading"></loader>
 <!-- <button (click)="toggle()">TOGGLE</button> -->
-<div class="article-container" *ngFor="let article of articles" style="opacity:0;"
+<div class="article-container page-wrapper" *ngFor="let article of articles" style="opacity:0;"
 	[@loadTrigger]="loading ? 'loading' : 'loaded'">
 	<div class="article-container__column">
 		<app-article
