@@ -14,6 +14,7 @@ import { PageArchivesComponent } from './page-archives/page-archives.component';
 import { PageArticleDetailComponent } from './page-article-detail/page-article-detail.component';
 import { LoaderComponent } from './loader/loader.component';
 import { HerobannerComponent } from './herobanner/herobanner.component';
+import { BannerService } from './banner.service';
 
 // define the available routes
 const routes: Routes = [
@@ -46,7 +47,8 @@ const routes: Routes = [
 	],
 	providers: [
 		ContentfulService,
-		LoaderComponent
+		LoaderComponent,
+		BannerService
 	],
 	bootstrap: [AppComponent]
 })
