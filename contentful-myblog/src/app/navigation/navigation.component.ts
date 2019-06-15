@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { BannerService } from '../banner.service';
 
 @Component({
 	selector: 'app-navigation',
@@ -11,7 +12,8 @@ export class NavigationComponent implements OnInit {
 	topPos = this.maxTop;
 	fixedNaviActive = false;
 
-	constructor(private router:Router) { }
+	constructor(private router:Router,
+				private bannerSvc:BannerService) { }
 
 	@HostListener("window:scroll", ['$event.target.scrollingElement'])
 	onWindowScroll(event) {
@@ -32,6 +34,7 @@ export class NavigationComponent implements OnInit {
 
 	navigate = function (location){
 		this.router.navigateByUrl(location);
+		this.bannerSvc.stop();
 	}
 
 }

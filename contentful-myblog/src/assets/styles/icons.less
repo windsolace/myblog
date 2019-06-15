@@ -1,49 +1,139 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?l4tp5u');
+    src:  url('fonts/icomoon.eot?l4tp5u#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?l4tp5u') format('truetype'),
+      url('fonts/icomoon.woff?l4tp5u') format('woff'),
+      url('fonts/icomoon.svg?l4tp5u#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .icon {
+    font-family: 'icomoon' ;
     display:block;
-    width:50px;
-    height:50px;
+    // width:50px;
+    // height:50px;
     background-size: 50px 50px;
     margin: 0px 5px;
+    //line-height: 1.5;
+    font-size:1rem;
+
+    //size
+    &-large {
+        width:48px;
+        height:48px;
+        font-size: 3rem;
+    }
 
     //programming language icons
     &-aem {
-        background-image: url(/assets/icons/tools/aem.svg);
+        // background-image: url(/assets/icons/tools/aem.svg);
+        .pt1:before {
+            content: "\e900";
+            color: rgb(0, 0, 0);
+        }
+        .pt2:before {
+            content: "\e901";
+            margin-left: -1em;
+            color: rgb(255, 118, 24);
+        }
+        .pt3:before {
+            content: "\e902";
+            margin-left: -1em;
+            color: rgb(255, 224, 203);
+        }
     }
     //@credit: https://github.com/konpa/devicon
-    &-angular {
-        background-image: url(/assets/icons/tools/angular.svg);
+    &-angular:before {
+        // background-image: url(/assets/icons/tools/angular.svg);
+        content: "\e903";
+        color: #c4473a;
     }
     &-aws {
-        background-image: url(/assets/icons/tools/aws.svg);
+        // background-image: url(/assets/icons/tools/aws.svg);
+        .pt1:before {
+            content: "\e904";
+            color: rgb(37, 47, 62);
+        }
+        .pt2:before {
+            content: "\e905";
+            margin-left: -1em;
+            color: rgb(255, 153, 0);
+        }
     }
-    &-css {
-        background-image: url(/assets/icons/tools/css3.svg);
+    &-css:before {
+       // background-image: url(/assets/icons/tools/css3.svg);
+       content: "\e907";
+       color: #1572b6;
     }
     &-ga {
         background-image: url(/assets/icons/tools/ga.svg);
     }
-    &-git {
-        background-image: url(/assets/icons/tools/git.svg);
+    &-git:before {
+        // background-image: url(/assets/icons/tools/git.svg);
+        content: "\e912";
+        color: #f34f29;
     }
-    &-html {
-        background-image: url(/assets/icons/tools/html5.svg);
+    &-html:before {
+        // background-image: url(/assets/icons/tools/html5.svg);
+        content: "\e913";
+        color: #e44d26;
     }
-    &-ionic {
-        background-image: url(/assets/icons/tools/ionic.svg);
+    &-ionic:before {
+        // background-image: url(/assets/icons/tools/ionic.svg);
+        content: "\e914";
+        color: #4e8ef7;
     }
-    &-java {
-        background-image: url(/assets/icons/tools/java.svg);
+    &-java:before {
+        // background-image: url(/assets/icons/tools/java.svg);
+        content: "\e915";
+        color: #ea2d2e;
     }
-    &-javascript {
-        background-image: url(/assets/icons/tools/javascript.svg);
+    &-javascript:before {
+        // background-image: url(/assets/icons/tools/javascript.svg);
+        content: "\e916";
+        color: #f0db4f;
     }
-    &-less {
-        background-image: url(/assets/icons/tools/less.svg);
+    &-less:before {
+        // background-image: url(/assets/icons/tools/less.svg);
+        content: "\e917";
+        color: #2a4d80;
     }
-    &-mysql {
-        background-image: url(/assets/icons/tools/mysql.svg);
+    &-mysql:before {
+        // background-image: url(/assets/icons/tools/mysql.svg);
+        content: "\e918";
+        color: #00618a;
     }
-    &-typescript {
-        background-image: url(/assets/icons/tools/typescript.svg);
+    &-node:before {
+        // background-image: url(/assets/icons/tools/node.svg);
+        content: "\e919";
+        color: #83cd29;
+    }
+    &-python:before {
+        // background-image: url(/assets/icons/tools/python.svg);
+        content: "\e91a";
+        color: #ffd845;
+    }
+    &-typescript:before {
+        // background-image: url(/assets/icons/tools/typescript.svg);
+        content: "\e91b";
+        color: #007acc;
+    }
+
+    //system
+    &-back:before {
+        content: "\ea40";
+        color: #000000;
+    }
+
+    //colors 
+    &-color {
+        //use theme's color
+        &-theme {
+            &:before {
+                color:@color-pine;
+            }  
+        }
     }
 }

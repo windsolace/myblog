@@ -4,4 +4,29 @@
         height:40vh;
         background-color:@color-herobanner;
     }
+
+    &__content {
+        color:@color-white;
+        font-size: 4rem;
+    }
+}
+:host::ng-deep .herobanner__caret {
+    border-right: .5em solid;
+    animation: caret 1s steps(1) infinite;
+}
+
+//mobile
+@media screen and(max-width:@max-mobile) {
+    .herobanner {
+        &__content {
+            color:@color-white;
+            font-size: 3rem;
+        }
+    }
+}
+
+@keyframes caret {
+    50% {
+      border-color: transparent;
+    }
 }
