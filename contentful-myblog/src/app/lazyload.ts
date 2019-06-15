@@ -1,12 +1,12 @@
 import LazyLoad from "vanilla-lazyload";
 
 const logEvent = (eventName, element) => {
-	console.log(
-		Date.now(),
-		eventName,
-		element.getAttribute("data-src"),
-		element.getAttribute("src")
-	);
+	// console.log(
+	// 	Date.now(),
+	// 	eventName,
+	// 	element.getAttribute("data-src"),
+	// 	element.getAttribute("src")
+	// );
 };
 
 const lazyLoadOptions = {

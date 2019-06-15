@@ -14,6 +14,7 @@ export class HerobannerComponent implements OnInit {
 		if(svcTextArr && svcTextArr.length > 0){
 			this.dataText = svcTextArr;
 		}
+		this.bannerSvc.start();
 	}
 
 	ngOnInit() {
@@ -26,8 +27,6 @@ export class HerobannerComponent implements OnInit {
 		// chekc if text isn't finished yet
 		if (i < (text.length)) {
 			// add next character to h1
-			console.log(text);
-
 			document.querySelector(".herobanner__content").innerHTML = text.substring(0, i + 1) + '<span class="herobanner__caret"aria-hidden="true"></span>';
 
 			// wait for a while and call this function again for next character
@@ -43,19 +42,25 @@ export class HerobannerComponent implements OnInit {
 	}
 	// start a typewriter animation for a text in the dataText array
 	startTextAnimation = function(i) {
-		if (typeof this.dataText[i] == 'undefined') {
+		if (typeof this.dataText[i] == 'undefined' && this.bannerSvc.isRunning()) {
 			setTimeout(()=> {
-				this.startTextAnimation(0);
+				if(this.bannerSvc.isRunning()) this.startTextAnimation(0);
 			}, 20000);
-		}
+		} 
 		// check if dataText[i] exists
-		if (i < this.dataText.length) {
+		if (i < this.dataText.length && this.bannerSvc.isRunning()) {
 			// text exists! start typewriter animation
 			this.typeWriter(this.dataText[i], 0, ()=> {
 				// after callback (and whole text has been animated), start next text
-				this.startTextAnimation(i + 1);
+				//check that only the current svc's text is being typed
+				var svctxt = this.bannerSvc.getText()[i];
+				var curtxt = this.dataText[i];
+				// console.log(svctxt + " | " + curtxt);
+				if(svctxt && svctxt === curtxt) {
+					this.startTextAnimation(i + 1);
+				}
 			});
-		}
+		} else return;
 	}
 	//credit: https://codepen.io/danielgroen/pen/VeRPOq
 
