@@ -8,8 +8,8 @@ import { BannerService } from '../banner.service';
 })
 export class PageHomeComponent implements OnInit {
 	bannerTextArr: string[] = [
-		"Hello.",
-		"Welcome to my profile."
+		"(つ✧ω✧)つ",
+		"Welcome to my profile!"
 	];
 
 	constructor(private bannerSvc:BannerService) { 

@@ -1,7 +1,7 @@
 <app-herobanner></app-herobanner>
 
 <div class="page-wrapper page-about">
-	<div class="section page-about__skills">
+	<section class="section page-about__skills">
 		<h2 class="section__title">Skills</h2>
 		<h4 class="section__subtitle">Core</h4>
 		<div class="section__content">
@@ -30,5 +30,21 @@
 			<span class="icon icon-large icon-color-theme icon-node" title="NodeJS"></span>
 			<span class="icon icon-large icon-color-theme icon-typescript" title="Typescript"></span>
 		</div>
-	</div>
+	</section>
+	<hr/>
+	<section class="section page-about__projects">
+		<h2 class="section__title">Projects</h2>
+		<div class="project" *ngFor="let project of projects">
+			<h4 class="section__subtitle project__title">{{ project.name }}</h4>
+			<h5 class="project__feature">
+				<ng-container *ngFor="let feature of project.features; let i = index">
+					{{feature}} <ng-container *ngIf="i < projects.length-1">&#8226;</ng-container> 
+				</ng-container>
+			</h5>
+			<div class="section__content project__content">
+				<div>{{project.content}}</div>
+			</div>
+		</div>
+		<hr/>
+	</section>
 </div>
