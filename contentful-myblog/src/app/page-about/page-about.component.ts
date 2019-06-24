@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { BannerService } from '../banner.service';
+import { TooltipComponent } from '../tooltip/tooltip.component';
 
 @Component({
 	selector: 'app-page-about',
@@ -13,6 +14,8 @@ export class PageAboutComponent implements OnInit {
 		"I am a Web Consultant.",
 		"I am here to stay."
 	];
+
+	@ViewChild('skillTooltip', {static:false}) skillTooltip:TooltipComponent;
 
 	projects: any = [
 		{
@@ -64,12 +67,27 @@ export class PageAboutComponent implements OnInit {
 	]
 	
 
-	constructor(private bannerSvc:BannerService) { 
+	constructor(private bannerSvc:BannerService,
+				private elementRef:ElementRef) { 
 		this.bannerSvc.setText(this.bannerTextArr);
 	}
 	
 	ngOnInit() {
 		this.bannerSvc.setText(this.bannerTextArr);
+	}
+
+	showSkill(ev) {
+		let el = ev.srcElement.closest('.icon');
+		if(ev.touches) {
+			let screenX = ev.touches[0].clientX;
+			let screenY = ev.touches[0].clientY;
+			let skillName:string =el.title;
+			this.skillTooltip.openAtPos(skillName, screenX, screenY);
+		}
+	}
+
+	hideSkill() {
+		this.skillTooltip.close();
 	}
 
 }
