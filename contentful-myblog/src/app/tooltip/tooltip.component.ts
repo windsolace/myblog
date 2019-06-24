@@ -1,22 +1,17 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-	selector: 'app-modal',
-	templateUrl: './modal.component.html',
-	styleUrls: ['./modal.component.less']
+	selector: 'app-tooltip',
+	templateUrl: './tooltip.component.html',
+	styleUrls: ['./tooltip.component.less']
 })
-export class ModalComponent implements OnInit {
-	private _title ='';
+export class TooltipComponent implements OnInit {
 	private _content = '';
 	hidden:boolean = true;
+	top = "0px";
+	left ="0px";
 
 	constructor() { }
-
-	@Input()
-	set title(title: string) {
-		this._title = title.trim();
-	}
-	get title(): string { return this._title }
 
 	@Input()
 	set content(content: string) {
@@ -31,7 +26,11 @@ export class ModalComponent implements OnInit {
 		this.hidden = true;
 	}
 	
-	open() {
+	openAtPos(cont:string, x:number, y:number) {
+		this._content=cont;
+		this.left = x + "px";
+		this.top = y + "px";
 		this.hidden = false;
 	}
+
 }

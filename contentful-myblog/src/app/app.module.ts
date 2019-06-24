@@ -17,6 +17,7 @@ import { HerobannerComponent } from './herobanner/herobanner.component';
 import { BannerService } from './banner.service';
 import { FooterComponent } from './footer/footer.component';
 import { ModalComponent } from './modal/modal.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
 
 // define the available routes
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
 		LoaderComponent,
 		HerobannerComponent,
 		FooterComponent,
-		ModalComponent
+		ModalComponent,
+		TooltipComponent
 	],
 	imports: [
 		BrowserModule,
