@@ -1,0 +1,7 @@
+<div class="modal" [ngClass]="{'modal--hidden':hidden}">
+	<div class="modal__wrapper">
+		<span class="modal__close" (click)="close()">&times;</span>
+		<h2>{{title}}</h2>
+    	<p [innerHTML]="content"></p>
+	</div>
+</div>

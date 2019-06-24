@@ -4,7 +4,7 @@ import { BannerService } from '../banner.service';
 @Component({
 	selector: 'app-page-home',
 	templateUrl: './page-home.component.html',
-	styleUrls: ['./page-home.component.css']
+	styleUrls: ['./page-home.component.less']
 })
 export class PageHomeComponent implements OnInit {
 	bannerTextArr: string[] = [

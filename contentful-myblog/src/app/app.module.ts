@@ -15,6 +15,8 @@ import { PageArticleDetailComponent } from './page-article-detail/page-article-d
 import { LoaderComponent } from './loader/loader.component';
 import { HerobannerComponent } from './herobanner/herobanner.component';
 import { BannerService } from './banner.service';
+import { FooterComponent } from './footer/footer.component';
+import { ModalComponent } from './modal/modal.component';
 
 // define the available routes
 const routes: Routes = [
@@ -35,7 +37,9 @@ const routes: Routes = [
 		PageArchivesComponent,
 		PageArticleDetailComponent,
 		LoaderComponent,
-		HerobannerComponent
+		HerobannerComponent,
+		FooterComponent,
+		ModalComponent
 	],
 	imports: [
 		BrowserModule,
