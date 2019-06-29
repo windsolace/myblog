@@ -10,9 +10,6 @@ import { TooltipComponent } from '../tooltip/tooltip.component';
 export class PageAboutComponent implements OnInit {
 	bannerTextArr: string[] = [
 		"(^０^)ノ",
-		"I am an AEM Developer.",
-		"I am a Web Consultant.",
-		"I am here to stay."
 	];
 
 	@ViewChild('skillTooltip', {static:false}) skillTooltip:TooltipComponent;
