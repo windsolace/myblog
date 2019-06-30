@@ -1,6 +1,8 @@
 :host-context(.article-page-container) {
     .article {
-        margin:0;
+        margin-left:auto;
+        margin-right:auto;
+        width:70%;
         overflow:hidden;
         .flex();
     
@@ -13,6 +15,13 @@
             img {
                 object-fit:cover;
             }
+        }
+    }
+
+    //mobile
+    @media screen and(max-width:@max-mobile) {
+        .article {
+            width:100%;
         }
     }
 }

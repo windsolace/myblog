@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class BannerService {
-	bannerText:string[] = ["Amsterdam.", "Full Service.", "Webdevelopment.", "Wij zijn Occhio!"];
+	bannerText:string[] = [". . ."];
 	run:boolean = true;
 
 	constructor() { }
