@@ -48,7 +48,7 @@ const routes: Routes = [
 		BrowserAnimationsModule,
 		RouterModule.forRoot(
 			routes,
-			{ enableTracing: true }
+			{ enableTracing: false }
 		)
 	],
 	providers: [

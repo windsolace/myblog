@@ -21,7 +21,6 @@ export class FooterComponent implements OnInit {
 	@ViewChild('footerModal',{static:false}) footerModal: ModalComponent;
 
 	openPrivacyPolicy() {
-		console.log("opening privacy policy");
 		this.footerModal.open();
 	}
 

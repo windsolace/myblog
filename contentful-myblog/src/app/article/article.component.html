@@ -8,8 +8,8 @@
 		<p *ngIf="description" class="article__description">
 			{{ description }}
 		</p>
-		<p *ngIf="content" class="article__content">
+		<div *ngIf="content" [innerHTML]="content" class="article__content">
 			{{ content }}
-		</p>
+		</div>
 	</div>
 </div>
