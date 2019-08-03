@@ -8,7 +8,7 @@
 		<p *ngIf="description" class="article__description">
 			{{ description }}
 		</p>
-		<div *ngIf="content" [innerHTML]="content" class="article__content">
+		<div markdown *ngIf="content" class="article__content">
 			{{ content }}
 		</div>
 	</div>

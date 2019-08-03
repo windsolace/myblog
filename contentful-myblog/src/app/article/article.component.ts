@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MarkdownService } from 'ngx-markdown';
 import lazyLoadInit  from '../lazyload';
 
 @Component({
@@ -13,7 +14,7 @@ export class ArticleComponent implements OnInit {
 	private _date = '';
 	private _image ='https://via.placeholder.com/3980';
 
-	constructor() { }
+	constructor(private markdownSvc: MarkdownService) { }
 
 	@Input()
 	set title(title: string) {
@@ -29,7 +30,10 @@ export class ArticleComponent implements OnInit {
 
 	@Input()
 	set content(content: string) {
-		this._content = content.trim();
+		console.log("before: " + content);
+		// this._content = this.markdownSvc.compile(content.trim());
+		this._content=content.replace(/<br \/>/g, '\n');
+		console.log("after trim : "   + this._content);
 	}
 	get content(): string { return this._content }
 

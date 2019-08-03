@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MarkdownModule } from 'ngx-markdown';
 import { RouterModule, Routes }   from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -46,6 +47,7 @@ const routes: Routes = [
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
+		MarkdownModule.forRoot(),
 		RouterModule.forRoot(
 			routes,
 			{ enableTracing: false }
