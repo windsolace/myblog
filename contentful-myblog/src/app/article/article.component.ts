@@ -12,7 +12,8 @@ export class ArticleComponent implements OnInit {
 	private _description = '';
 	private _content = '';
 	private _date = '';
-	private _image ='https://via.placeholder.com/3980';
+	private _heroImageUrl ='';
+	// private _image ='https://via.placeholder.com/3980';
 
 	constructor(private markdownSvc: MarkdownService) { }
 
@@ -30,10 +31,7 @@ export class ArticleComponent implements OnInit {
 
 	@Input()
 	set content(content: string) {
-		console.log("before: " + content);
-		// this._content = this.markdownSvc.compile(content.trim());
 		this._content=content.replace(/<br \/>/g, '\n');
-		console.log("after trim : "   + this._content);
 	}
 	get content(): string { return this._content }
 
@@ -44,13 +42,17 @@ export class ArticleComponent implements OnInit {
 	get date(): string { return this._date }
 
 	@Input()
-	set image(image : string) {
-		this._image = image;
+	set heroImageUrl(image : string) {
+		this._heroImageUrl = this.getOptimizedImage(image, 700);
 	}
-	get image(): string { return this._image }
+	get heroImageUrl(): string { return this._heroImageUrl }
 
 	ngOnInit() {
 		lazyLoadInit();
+	}
+
+	getOptimizedImage(url: string, width: number) :string {
+		return url + '?fm=jpg&fl=progressive&w=' + width;
 	}
 
 }

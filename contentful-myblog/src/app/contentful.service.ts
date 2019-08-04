@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { createClient, Entry } from 'contentful';
+import { createClient, Entry, Asset } from 'contentful';
 import { environment } from '../../src/environments/environment';
 
 
@@ -31,5 +31,11 @@ export class ContentfulService {
 		return this.cdaClient.getEntry(id,query)
 			.then(res => res);
 	}
+
+	getImage(assetId:string): Promise<Asset> {
+		return this.cdaClient.getAsset(assetId)
+			.then(res => res);
+	}
+
 
 }

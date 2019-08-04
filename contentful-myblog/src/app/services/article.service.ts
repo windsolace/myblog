@@ -57,6 +57,7 @@ export class ArticleService {
 		article.id = entry.sys.id;
 		article.title = entry.fields.postTitle;
 		article.description = entry.fields.description;
+		article.heroImage = entry.fields.heroImage.fields;
 		article.date = entry.fields.date;
 		article.content = this.retrieveContent(entry.fields.post);
 		return article;

@@ -2,6 +2,7 @@ export class Article {
     private _id: string;
     private _title: string;
     private _description: string;
+    private _heroImage: any;
     private _content: string;
     private _date: string;
 
@@ -24,6 +25,13 @@ export class Article {
     }
     set description(description: string) {
         this._description = description;
+    }
+
+    get heroImage() {
+        return this._heroImage;
+    }
+    set heroImage(heroImage: string) {
+        this._heroImage = heroImage;
     }
 
     get content() {

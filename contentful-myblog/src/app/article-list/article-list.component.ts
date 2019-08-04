@@ -34,7 +34,7 @@ export class ArticleListComponent implements OnInit {
 
 	ngOnInit() {
 		this.articleSvc.getArticles().subscribe(articles => {
-			this.articles = articles;
+			this.articles = articles; console.log(articles);
 			this.loading = false;
 		});
 	}
